@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsere Hochzeitsfeier | [Eure Namen]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2d5a4d;
+            --secondary-green: #6b9080;
+            --accent-beige: #f4e9d8;
+            --light-green: #eaf4f4;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--light-green);
+            color: var(--primary-green);
+        }
+
+        .header {
+            background: linear-gradient(rgba(45, 90, 77, 0.8), rgba(45, 90, 77, 0.8)),
+                        url('https://example.com/hintergrund-bild.jpg');
+            background-size: cover;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before,
+        .header::after {
+            content: '';
+            position: absolute;
+            background: url('leaf-pattern.png');
+            width: 150px;
+            height: 100px;
+            opacity: 0.3;
+        }
+
+        .header::before { left: 20px; top: 20px; }
+        .header::after { right: 20px; bottom: 20px; transform: rotate(180deg); }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section {
+            background: white;
+            padding: 3rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .section::before {
+            content: '🌿';
+            position: absolute;
+            font-size: 2rem;
+            top: -15px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+        }
+
+        .form-group {
+            margin: 1.5rem 0;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--secondary-green);
+            border-radius: 8px;
+            margin-top: 0.5rem;
+        }
+
+        button {
+            background: var(--primary-green);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .section { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Unsere Liebe blüht 🌿</h1>
+        <p style="color: var(--accent-beige); font-size: 1.2rem;">27. September 2025</p>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>Willkommen in unserem grünen Glück</h2>
+            <p>Liebe Freunde,<br><br>
+            Nachdem wir im kleinen Kreis den Bund fürs Leben geschlossen haben, möchten wir nun mit euch allen unser großes Fest der Liebe feiern!<br><br>
+            Gemeinsam mit unserer kleinen Tochter laden wir euch ein, mit uns zu speisen, zu tanzen und unvergessliche Momente zu teilen.</p>
+            
+            <div class="gallery">
+                <!-- Hier eigene Bilder einfügen -->
+                <img src="placeholder1.jpg" alt="Hochzeitsfoto">
+                <img src="placeholder2.jpg" alt="Hochzeitsfoto">
+                <img src="placeholder3.jpg" alt="Hochzeitsfoto">
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Programm</h2>
+            <ul style="list-style: none; line-height: 2;">
+                <li>🕔 17:00 - Apero im Garten</li>
+                <li>🕖 19:00 - Festliches Dinner</li>
+                <li>🕘 21:00 - Tanzparty bis in die Nacht</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Anmeldung</h2>
+            <form>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>E-Mail</label>
+                    <input type="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Kommst du?</label>
+                    <select required>
+                        <option value="ja">Ja, ich freue mich!</option>
+                        <option value="nein">Leider nicht</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>+1 Person</label>
+                    <input type="text" placeholder="Name der Begleitung">
+                </div>
+
+                <div class="form-group">
+                    <label>Kinder</label>
+                    <input type="number" min="0" placeholder="Anzahl">
+                </div>
+
+                <button type="submit">Absenden</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
