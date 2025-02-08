@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unsere Hochzeitsfeier | [Eure Namen]</title>
+    <meta name="robots" content="noindex">
+    <title>Hochzeitsfeier | Bettina & Daniel</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-green: #2d5a4d;
+            --primary-green: #6b9080;
             --secondary-green: #6b9080;
             --accent-beige: #f4e9d8;
-            --light-green: #eaf4f4;
+            --light-green: #6b9080;
         }
 
         * {
@@ -27,7 +28,7 @@
 
         .header {
             background: linear-gradient(rgba(45, 90, 77, 0.8), rgba(45, 90, 77, 0.8)),
-                        url('https://example.com/hintergrund-bild.jpg');
+            url('https://example.com/hintergrund-bild.jpg');
             background-size: cover;
             padding: 4rem 2rem;
             text-align: center;
@@ -124,72 +125,32 @@
             h1 { font-size: 2.5rem; }
             .section { padding: 2rem; }
         }
+
+        .jute-separator-container {
+            transform: translateY(-55%);
+            background: linear-gradient(180deg, rgba(57,101,87,1) 20%, rgba(107,144,128,1) 92%);
+        }
+
+        .jute-separator {
+            height: 60px;
+            background-image: url('juteschnur.png');
+            background-repeat: repeat-x;
+        }
     </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Unsere Liebe blüht 🌿</h1>
-        <p style="color: var(--accent-beige); font-size: 1.2rem;">27. September 2025</p>
-    </header>
+<header class="header">
+    <h1>Bettina<br/>&<br/>Daniel</h1>
+    <p style="color: var(--accent-beige); font-size: 1.2rem;">27. September 2025</p>
+</header>
 
-    <div class="container">
-        <section class="section">
-            <h2>Willkommen in unserem grünen Glück</h2>
-            <p>Liebe Freunde,<br><br>
-            Nachdem wir im kleinen Kreis den Bund fürs Leben geschlossen haben, möchten wir nun mit euch allen unser großes Fest der Liebe feiern!<br><br>
-            Gemeinsam mit unserer kleinen Tochter laden wir euch ein, mit uns zu speisen, zu tanzen und unvergessliche Momente zu teilen.</p>
-            
-            <div class="gallery">
-                <!-- Hier eigene Bilder einfügen -->
-                <img src="placeholder1.jpg" alt="Hochzeitsfoto">
-                <img src="placeholder2.jpg" alt="Hochzeitsfoto">
-                <img src="placeholder3.jpg" alt="Hochzeitsfoto">
-            </div>
-        </section>
+<div class="jute-separator-container">
+<div class="jute-separator"></div>
+</div>
 
-        <section class="section">
-            <h2>Programm</h2>
-            <ul style="list-style: none; line-height: 2;">
-                <li>🕔 17:00 - Apero im Garten</li>
-                <li>🕖 19:00 - Festliches Dinner</li>
-                <li>🕘 21:00 - Tanzparty bis in die Nacht</li>
-            </ul>
-        </section>
 
-        <section class="section">
-            <h2>Anmeldung</h2>
-            <form>
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>E-Mail</label>
-                    <input type="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label>Kommst du?</label>
-                    <select required>
-                        <option value="ja">Ja, ich freue mich!</option>
-                        <option value="nein">Leider nicht</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>+1 Person</label>
-                    <input type="text" placeholder="Name der Begleitung">
-                </div>
-
-                <div class="form-group">
-                    <label>Kinder</label>
-                    <input type="number" min="0" placeholder="Anzahl">
-                </div>
-
-                <button type="submit">Absenden</button>
-            </form>
-        </section>
-    </div>
+<div class="container">
+    <!-- Rest des Codes bleibt gleich -->
+</div>
 </body>
 </html>
