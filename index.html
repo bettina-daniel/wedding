@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
     <title>Hochzeitsfeier | Bettina & Daniel</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+          rel="stylesheet">
     <style>
         :root {
             --primary-green: #6b9080;
@@ -22,66 +25,94 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--light-green);
+            background: url('light_green_pattern.png') repeat;
             color: var(--primary-green);
         }
 
         .header {
-            background: linear-gradient(rgba(45, 90, 77, 0.8), rgba(45, 90, 77, 0.8)),
-            url('https://example.com/hintergrund-bild.jpg');
-            background-size: cover;
+            background: url('race_green_pattern.png') repeat;
+            background-size: contain;
             padding: 4rem 2rem;
             text-align: center;
             position: relative;
+            width: 100%;
         }
 
-        .header::before,
-        .header::after {
-            content: '';
-            position: absolute;
-            background: url('leaf-pattern.png');
-            width: 150px;
-            height: 100px;
-            opacity: 0.3;
+        .header__content {
+            border: solid 5px #ebd4a5;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            background: #255347ad;
+            box-shadow: 6px 4px 15px 0px #000000;
+            position: relative;
         }
 
-        .header::before { left: 20px; top: 20px; }
-        .header::after { right: 20px; bottom: 20px; transform: rotate(180deg); }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            color: white;
-            margin-bottom: 1rem;
+        .header__text {
+            font-family: "Cookie", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 4.5rem;
+            background: -webkit-linear-gradient(#f1e9cd, #d7b987);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 3rem;
+            line-height: 1;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            overflow: hidden;
+        }
+
+        @media (min-width: 1180px) {
+            .container {
+                padding: 6rem;
+            }
         }
 
         .section {
-            background: white;
+            color: #53502e;
+            border: solid 5px #ebd4a5;
+            background: #f2eeec;
             padding: 3rem;
             margin: 3rem 0;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 7px 7px 13px 0px #000000;
             position: relative;
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-size: 1.25rem;
         }
 
         .section::before {
-            content: '🌿';
+            content: '';
             position: absolute;
-            font-size: 2rem;
-            top: -15px;
-            left: 20px;
-            background: white;
-            padding: 0 10px;
+            transform: rotate(8deg) translateX(17%) translateY(14%);
+            background-image: url(border_flower_top_left.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+            width: clamp(5rem, 14.5rem, 20vw);
+            height: clamp(5rem, 14.5rem, 20vw);
+            top: calc(-1 * clamp(5rem, 14.5rem, 20vw) * 0.43);
+            left: calc(-1 * clamp(5rem, 14.5rem, 20vw) * 0.45);
         }
 
-        .form-group {
-            margin: 1.5rem 0;
+        .section::after {
+            content: '';
+            position: absolute;
+            background-image: url(border_flower_bottom_right.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: rotate(6deg) translateX(-37%) translateY(-23%);
+            z-index: 1;
+            width: clamp(5rem, 20rem, 25vw);
+            height: clamp(5rem, 20rem, 25vw);
+            bottom: calc(-1 * clamp(5rem, 20rem, 25vw) * 0.75);
+            right: calc(-1 * clamp(5rem, 20rem, 25vw) * 0.65);
         }
 
         input, select, textarea {
@@ -121,36 +152,207 @@
             border-radius: 10px;
         }
 
+        @media (max-width: 425px) {
+            .header__text {
+                padding: 1rem;
+            }
+
+            .names {
+                padding-left: 0;
+            }
+        }
+
+        @media (min-width: 426px) {
+            .names {
+                padding-left: 1.5rem;
+            }
+        }
+
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .section { padding: 2rem; }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 2rem;
+            }
+
+            .jute-separator {
+                height: 30px;
+                background-image: url('juteschnur_small.png');
+            }
+
+            .seal {
+                width: 50%;
+                max-width: 150px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .jute-separator {
+                height: 60px;
+                background-image: url('juteschnur.png');
+                background-repeat: repeat-x;
+            }
         }
 
         .jute-separator-container {
             transform: translateY(-55%);
-            background: linear-gradient(180deg, rgba(57,101,87,1) 20%, rgba(107,144,128,1) 92%);
+            position: relative;
+            z-index: 1;
         }
 
-        .jute-separator {
-            height: 60px;
-            background-image: url('juteschnur.png');
-            background-repeat: repeat-x;
+        .seal {
+            position: absolute;
+            top: 50%;
+            left: 72%;
+            transform: translate(-50%, -54%);
+            width: 30%;
+            max-width: 306px;
+            height: auto;
+            z-index: 2;
+        }
+
+        .address-container {
+            display: flex;
+            font-size: 1.25rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .names {
+            text-align: left;
+            border-bottom: solid 3px #ebd4a5;
+            padding-bottom: 1rem;
+        }
+
+        .invitation {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .wedding-title {
+            font-size: 3rem;
+            margin-top: 0.25rem;
+            max-width: 15rem;
+        }
+
+        .date {
+            text-align: right;
+            border-right: solid 3px #ebd4a5;
+            padding-right: 1rem;
+            margin-right: 1rem;
+            margin-left: 1.5rem;
+        }
+
+        .location {
+            text-align: left;
         }
     </style>
 </head>
 <body>
 <header class="header">
-    <h1>Bettina<br/>&<br/>Daniel</h1>
-    <p style="color: var(--accent-beige); font-size: 1.2rem;">27. September 2025</p>
+    <div class="header__content">
+
+        <div class="header__text">
+            <div class="names">
+                <div data-i18n="names.bettina">Bettina</div>
+                <div data-i18n="names.daniel">& Daniel</div>
+            </div>
+            <div class="invitation" data-i18n="header.invitation">laded Eu i zu eusem</div>
+            <div class="wedding-title" data-i18n="header.weddingTitle">Hochzytsfest</div>
+            <div class="address-container">
+                <div class="date">
+                    <div data-i18n="date.saturday">Samschtig</div>
+                    <div data-i18n="date.september">27 Sept</div>
+                    <div data-i18n="date.year">2025</div>
+                    <div data-i18n="date.time">17:00</div>
+                </div>
+                <div class="location">
+                    <div data-i18n="location.rooftop">Dachterrasse</div>
+                    <div data-i18n="location.wiedehopf">Zum Wiedehopf</div>
+                    <div data-i18n="location.address">Haldenstr. 69</div>
+                    <div data-i18n="location.city">8400 Winterthur</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 
 <div class="jute-separator-container">
-<div class="jute-separator"></div>
+    <div class="jute-separator"></div>
+    <img src="seal_and_flowers.png" alt="Goldenes Siegel" class="seal">
 </div>
 
 
 <div class="container">
-    <!-- Rest des Codes bleibt gleich -->
+    <section class="section">
+        <h2 data-i18n="welcome.title">Willkommen in unserem grünen Glück</h2>
+        <p data-i18n="welcome.text">Liebe Freunde,<br><br>
+            Nachdem wir im kleinen Kreis den Bund fürs Leben geschlossen haben, möchten wir nun mit euch allen unser
+            großes Fest der Liebe feiern!<br><br>
+            Gemeinsam mit unserer kleinen Tochter laden wir euch ein, mit uns zu speisen, zu tanzen und unvergessliche
+            Momente zu teilen.</p>
+
+        <div class="gallery">
+            <!-- Hier eigene Bilder einfügen -->
+            <img src="placeholder1.jpg" alt="Hochzeitsfoto">
+            <img src="placeholder2.jpg" alt="Hochzeitsfoto">
+            <img src="placeholder3.jpg" alt="Hochzeitsfoto">
+        </div>
+    </section>
 </div>
+
+<script>
+    const translations = {
+        de: {
+            "names.bettina": "Bettina",
+            "names.daniel": "& Daniel",
+            "header.invitation": "laded Eu i zu eusem",
+            "header.weddingTitle": "Hochzytsfest",
+            "date.saturday": "Samschtig",
+            "date.september": "27 Sept",
+            "date.year": "2025",
+            "date.time": "17:00",
+            "location.rooftop": "Dachterrasse",
+            "location.wiedehopf": "Zum Wiedehopf",
+            "location.address": "Haldenstr. 69",
+            "location.city": "8400 Winterthur",
+            "welcome.title": "Willkommen in unserem grünen Glück",
+            "welcome.text": "Liebe Freunde,<br><br>Nachdem wir im kleinen Kreis den Bund fürs Leben geschlossen haben, möchten wir nun mit euch allen unser großes Fest der Liebe feiern!<br><br>Gemeinsam mit unserer kleinen Tochter laden wir euch ein, mit uns zu speisen, zu tanzen und unvergessliche Momente zu teilen."
+        },
+        en: {
+            "names.bettina": "Bettina",
+            "names.daniel": "& Daniel",
+            "header.invitation": "invite you to our",
+            "header.weddingTitle": "Wedding Celebration",
+            "date.saturday": "Saturday",
+            "date.september": "27 Sept",
+            "date.year": "2025",
+            "date.time": "5:00 PM",
+            "location.rooftop": "Roof Terrace",
+            "location.wiedehopf": "Zum Wiedehopf",
+            "location.address": "Haldenstr. 69",
+            "location.city": "8400 Winterthur",
+            "welcome.title": "Welcome to our green happiness",
+            "welcome.text": "Dear Friends,<br><br>Now that we have tied the knot in a small circle, we would like to celebrate our great festival of love with all of you!<br><br>Together with our little daughter, we invite you to dine, dance and share unforgettable moments with us."
+        }
+    };
+
+    function translatePage(lang) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            const key = element.dataset.i18n;
+            if (translations[lang] && translations[lang][key]) {
+                element.innerHTML = translations[lang][key];
+            }
+        });
+    }
+
+    const userLang = navigator.language || navigator.userLanguage;
+    const lang = userLang.startsWith('de') ? 'de' : 'en'; // Default to English if not German
+
+    translatePage(lang);
+</script>
 </body>
 </html>
