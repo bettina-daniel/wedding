@@ -32,10 +32,21 @@
         .header {
             background: url('race_green_pattern.png') repeat;
             background-size: contain;
-            padding: 4rem 2rem;
             text-align: center;
             position: relative;
             width: 100%;
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 4rem 1rem;
+            }
+        }
+
+        @media (min-width: 481px) {
+            .header {
+                padding: 4rem 2rem;
+            }
         }
 
         .header__content {
@@ -60,6 +71,41 @@
             line-height: 1;
         }
 
+        .language-switcher {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+        }
+
+        .language-switcher button {
+            background: none;
+            border: none;
+            color: #f1e9cd; /* Use a color that fits your header */
+            padding: 0.5rem;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: color 0.3s, opacity 0.3s;
+        }
+
+        .language-switcher button:hover {
+            color: #d7b987;
+            transform: none;
+        }
+
+        a {
+            color: #84672c;
+        }
+
+        .language-switcher button.active {
+            opacity: 1;
+            font-weight: bold;
+        }
+
+        .language-switcher button:not(.active) {
+            opacity: 0.6;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -69,7 +115,19 @@
 
         @media (min-width: 1180px) {
             .container {
-                padding: 6rem;
+                padding: 1rem 6rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0;
             }
         }
 
@@ -78,13 +136,30 @@
             border: solid 5px #ebd4a5;
             background: #f2eeec;
             padding: 3rem;
-            margin: 3rem 0;
+            margin: 4rem 0;
             box-shadow: 7px 7px 13px 0px #000000;
             position: relative;
             font-family: "Playfair Display", serif;
             font-optical-sizing: auto;
             font-style: normal;
             font-size: 1.25rem;
+        }
+
+        .section h2 {
+            margin-bottom: 2rem;
+            color: #84672c;
+        }
+
+        @media (min-width: 800px) {
+            .section {
+                margin-bottom: 4rem;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .section {
+                margin-bottom: 8rem;
+            }
         }
 
         .section::before {
@@ -147,7 +222,8 @@
 
         .gallery img {
             width: 100%;
-            height: 200px;
+            max-width: 350px;
+            height: 300px;
             object-fit: cover;
             border-radius: 10px;
         }
@@ -248,10 +324,31 @@
         .location {
             text-align: left;
         }
+
+        @media (max-width: 620px) {
+            .gallery {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .gallery img {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .section b {
+            color: #84672c; /* Changed bold text color */
+        }
     </style>
 </head>
 <body>
 <header class="header">
+    <div class="language-switcher">
+        <button onclick="switchLanguage('de')" data-lang="de">DE</button>
+        <button onclick="switchLanguage('en')" data-lang="en">EN</button>
+    </div>
     <div class="header__content">
 
         <div class="header__text">
@@ -287,19 +384,102 @@
 
 <div class="container">
     <section class="section">
-        <h2 data-i18n="welcome.title">Willkommen in unserem grünen Glück</h2>
-        <p data-i18n="welcome.text">Liebe Freunde,<br><br>
-            Nachdem wir im kleinen Kreis den Bund fürs Leben geschlossen haben, möchten wir nun mit euch allen unser
-            großes Fest der Liebe feiern!<br><br>
-            Gemeinsam mit unserer kleinen Tochter laden wir euch ein, mit uns zu speisen, zu tanzen und unvergessliche
-            Momente zu teilen.</p>
+        <h2 data-i18n="celebration.title">Unsere Geschichte, eure Feier</h2>
+        <p data-i18n="celebration.text">
+            Liebste Freunde und Familie,<br><br>
+            Am 15. Januar 2025 haben wir uns gegenseitig im engsten Kreis das Jawort gegeben und heissen nun beide
+            Messmer!
+            Da wir im März unser erstes Kind erwarten, haben wir uns für diese sehr intime Feier entschieden.<br><br>
+            Da wir unsere Freude und unser Glück kaum in Worte fassen können, möchten wir dies mit euch allen teilen!
+            Deshalb laden wir euch herzlich zu unserer Hochzeitsfeier am 27. September 2025 ein.
+            Zusammen mit unserer Tochter möchten wir unsere Hochzeit nachfeiern - mit gutem Essen, herzlicher Musik und
+            all
+            den Menschen, die uns am meisten bedeuten. Und natürlich die perfekte Gelegenheit für alle, unsere kleine
+            Tochter kennenzulernen, die bis dahin schon ein paar Monate alt sein wird.
+        </p>
 
         <div class="gallery">
-            <!-- Hier eigene Bilder einfügen -->
-            <img src="placeholder1.jpg" alt="Hochzeitsfoto">
-            <img src="placeholder2.jpg" alt="Hochzeitsfoto">
-            <img src="placeholder3.jpg" alt="Hochzeitsfoto">
+            <img src="civil_wedding_left.png" alt="Hochzeitsfoto">
+            <img src="civil_wedding_middle.png" alt="Hochzeitsfoto">
+            <img src="civil_wedding_right.png" alt="Hochzeitsfoto">
         </div>
+    </section>
+
+    <section class="section">
+        <h2 data-i18n="details.title">Festablauf</h2>
+        <p data-i18n="details.text">
+            Wir freuen uns darauf, mit euch einen unvergesslichen Tag zu verbringen!<br><br>
+            <b>17:00 - Apéro</b><br>
+            Begrüssung auf der Dachterrasse<br><br>
+            <b>19:00 - Dinner</b><br>
+            Lasst euch von unserem Grillbuffet verwöhnen: Saftige Steaks, knackige Salate, vegetarische Köstlichkeiten
+            und
+            hausgemachte Saucen – für jeden Geschmack ist etwas dabei!<br><br>
+            <b>22:00 - Tanzparty</b><br>
+            Musik & Cocktails bis in die Nacht
+        </p>
+        <p style="margin-top: 1rem; font-size: 1rem;" data-i18n="details.disclaimer"><i>Bitte beachtet: Der genaue
+            Zeitplan ist noch nicht final und kann sich bis zum Sommer noch ändern.</i></p>
+    </section>
+
+    <section class="section">
+        <h2 data-i18n="location.title">Anreise <span style="font-style: italic;">(Wegbeschreibung)</span></h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2695.0798839994213!2d8.727341612498256!3d47.50783547106082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a995bc9c877df%3A0xc80b552d712b6a9c!2sDachterrasse%20zum%20Wiedehopf!5e0!3m2!1sen!2sch!4v1739390738824!5m2!1sen!2sch"
+                width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p data-i18n="location.celebrationLocation" style="margin-top: 2.5rem;"></p>
+        <div style="margin-top: 1rem;">
+            <div data-i18n="location.byBus"></div>
+            <ul style="list-style-type: circle; padding-left: 20px; margin-top: 0.5rem;">
+                <li><span data-i18n="location.busInstructions1"></span></li>
+                <li><span data-i18n="location.busInstructions2"></span></li>
+                <li><span data-i18n="location.busInstructions3"></span></li>
+            </ul>
+            <p style="font-style: italic; margin-top: 1rem;" data-i18n="location.busInstructions4"></p>
+        </div>
+        <div>
+            <div data-i18n="location.byCar" style="margin-top: 2.5rem;"></div>
+            <ul style="list-style-type: circle; padding-left: 20px; margin-top: 0.5rem;">
+                <li><span data-i18n="location.carInstructions1"></span></li>
+                <li><span data-i18n="location.carInstructions2"></span></li>
+                <li><span data-i18n="location.carInstructions3"></span></li>
+            </ul>
+            <p style="font-style: italic; margin-top: 1rem;" data-i18n="location.carInstructions4"></p>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 data-i18n="rsvp.title">RSVP – Bitte um Rückmeldung</h2>
+        <p data-i18n="rsvp.text">
+        </p>
+        <div id="rsvp-links">
+            <div style="margin-top: 1rem;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScyZ01knENDNXcSEvekqfknJ9KYOAqOY2D11PFBIwQlhu7fPA/viewform" target="_blank" data-i18n="rsvp.germanFormLink" >Zur deutschen
+                RSVP-Formular</a>
+            </div>
+            <div style="margin-top: 1rem;">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScyZ01knENDNXcSEvekqfknJ9KYOAqOY2D11PFBIwQlhu7fPA/viewform?usp=header" target="_blank" data-i18n="rsvp.englishFormLink">English
+                RSVP form</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2 data-i18n="registry.title">Unsere Wunschliste</h2>
+        <p data-i18n="registry.text">
+            Da wir bereits alles haben, was wir zum Leben brauchen, freuen wir uns am meisten über eure Anwesenheit an
+            unserem Fest.
+            Wenn ihr uns dennoch eine Freude machen möchtet, würden wir uns über einen Beitrag zu unserer Hochzeitsreise
+            oder
+            Unterstützung für unser wachsendes Familienleben freuen.
+        </p>
+    </section>
+
+    <section class="section">
+        <h2 data-i18n="questions.title">Unsere Wunschliste</h2>
+        <p data-i18n="questions.text">
+        </p>
+        <p style="margin-top: 1rem; font-size: 1rem;" data-i18n="questions.disclaimer"></p>
     </section>
 </div>
 
@@ -318,8 +498,38 @@
             "location.wiedehopf": "Zum Wiedehopf",
             "location.address": "Haldenstr. 69",
             "location.city": "8400 Winterthur",
-            "welcome.title": "Willkommen in unserem grünen Glück",
-            "welcome.text": "Liebe Freunde,<br><br>Nachdem wir im kleinen Kreis den Bund fürs Leben geschlossen haben, möchten wir nun mit euch allen unser großes Fest der Liebe feiern!<br><br>Gemeinsam mit unserer kleinen Tochter laden wir euch ein, mit uns zu speisen, zu tanzen und unvergessliche Momente zu teilen."
+            "celebration.title": "Hochzeitsparty mit Baby-Bonus!",
+            "celebration.text": "Tadaaa!🥳<br><br>Wir haben Neuigkeiten! Am 15. Januar 2025 haben wir uns im engsten Kreis das Ja-Wort gegeben und sind nun offiziell Familie Messmer. Und bevor ihr fragt: Ja, das Timing war… ähm… strategisch. Denn wir erwarten ein kleines Wunder – im März wird unser erstes Kind geboren!<br><br>Aber keine Hochzeit ohne Gäste! Deshalb laden wir euch herzlich zu unserer \"Hochzeitsparty mit Baby-Bonus\" am 27. September 2025 ein. Zusammen mit unserer Tochter (die bis dahin hoffentlich schon durchschläft… hust) möchten wir unsere Hochzeit nachfeiern – mit allem, was dazugehört: leckerem Essen, guter Musik und natürlich euch, unseren liebsten Menschen. Wir freuen uns auf euch!",
+            "details.title": "Festablauf",
+            "details.text": "Wir freuen uns darauf, mit euch einen unvergesslichen Tag zu verbringen!<br><br><b>17:00 - Apéro</b><br>Begrüssung auf der Dachterrasse<br><br><b>19:00 - Dinner</b><br>Lasst euch von unserem Grillbuffet verwöhnen – für jeden Geschmack ist etwas dabei!<br><br><b>22:00 - Tanzparty</b><br>Musik & Tanz bis in die Nacht",
+            "details.disclaimer": "<i>Bitte beachtet:<br>Der genaue Zeitplan ist noch nicht final und kann sich bis zum September noch ändern.</i>",
+            "location.title": "Anreise",
+            "location.celebrationLocation": "Die Feier findet auf der Dachterrasse \"Zum Wiedehopf\" statt:",
+            "location.byBus": "<b>Mit dem Bus</b> (Von Bushaltestelle \"Haldengut\")",
+            "location.byCar": "<b>Mit dem Auto</b> (Von der Rychenbergstrasse)",
+            "location.busInstructions1": "Gehe bergauf in Richtung des Kreisels und biege kurz vor dem Kreisel links ab.",
+            "location.busInstructions2": "Gehe zwischen den Parkplätzen hindurch bis zum Fussgängerstreifen vor der Anlieferung. Dort siehst du auf der linken Seite des Hohen Turms einen Eingang, welcher mit unserem Logo gekennzeichnet ist.",
+            "location.busInstructions3": "Wenn du durch diesen Eingang gehst, führen dich die Treppen in den 6. Stock. Der steile Aufstieg ist es wert !",
+            "location.busInstructions4": "Falls du Schwierigkeiten beim Treppensteigen hast, rufe uns bitte über die Gegensprechanlage vor der ersten Treppe an (rechts an der Wand). Wir holen dich gerne mit dem Personal-/Warenlift ab.",
+            "location.carInstructions1": "Beim Kreisel die 1. Ausfahrt Richtung \"Kantonsspital\" nehmen. Nach dem Kreisel direkt rechts einbiegen und auf dem Haldengut-Gelände parkieren. (Ab 17:00Uhr sind sämtliche Parkplätze von Heineken/Haldengut zur Benutzung frei)",
+            "location.carInstructions2": "Gehe zwischen den Parkplätzen hindurch, bis zum Fussgängerstreifen vor der Anlieferung. Dort siehst du auf der linken Seite des Hohen Turms einen Eingang, welcher mit unserem Logo gekennzeichnet ist.",
+            "location.carInstructions3": "Wenn du durch diesen Eingang gehst, führen dich die Treppen in den 6. Stock. Der steile Aufstieg ist es wert!",
+            "location.carInstructions4": "Falls du Schwierigkeiten beim Treppensteigen hast, rufe uns bitte über die Gegensprechanlage vor der ersten Treppe an. Wir holen dich gerne mit dem Personal- /Warenlift ab.",
+            "rsvp.title": "RSVP – Bitte um Rückmeldung",
+            "rsvp.text": "Wir bitten um eure Rückmeldung bis zum <b>30.04.2025</b>, damit wir besser planen können. Bitte teilt uns mit, ob ihr dabei sein könnt und ob ihr spezielle Wünsche oder Allergien habt.",
+            "rsvp.germanFormLink": "Deutsches RSVP-Formular",
+            "rsvp.name": "Name:",
+            "rsvp.email": "E-Mail:",
+            "rsvp.attendance": "Zusage:",
+            "rsvp.yes": "Ja, ich bin dabei!",
+            "rsvp.no": "Leider nein",
+            "rsvp.message": "Nachricht (z.B. Allergien, spezielle Wünsche):",
+            "rsvp.submit": "Senden",
+            "registry.title": "Unsere Wunschliste",
+            "registry.text": "Wir freuen uns sehr, unseren besonderen Tag mit euch zu feiern! Eure Anwesenheit ist wirklich das größte Geschenk.<br><br>Falls ihr uns etwas schenken möchtet, haben wir ein paar Ideen zur Inspiration. Wir träumen davon, unser Zuhause mit Musik durch eine fantastische Musikanlage zu füllen, eine Pflanzenoase zu erschaffen und vielleicht sogar auf Reisen zu gehen! Beiträge zu einem dieser Träume wären wunderbar.<br><br>Selbstverständlich ist eure Anwesenheit das Wichtigste für uns, und wir können es kaum erwarten, mit euch zu feiern!",
+            "questions.title": "Fragen",
+            "questions.text": "<b>Dresscode:</b>Wir freuen uns über sommerlich/herbstlich-festliche Kleidung, in der ihr euch wohlfühlt! Zur Orientierung: Wir werden in unseren Hochzeitsoutfits dabei sein.",
+            "questions.disclaimer": "<i>Bei weiteren Fragen wendet euch gerne an Bettina oder Daniel.</i>",
         },
         en: {
             "names.bettina": "Bettina",
@@ -334,8 +544,38 @@
             "location.wiedehopf": "Zum Wiedehopf",
             "location.address": "Haldenstr. 69",
             "location.city": "8400 Winterthur",
-            "welcome.title": "Welcome to our green happiness",
-            "welcome.text": "Dear Friends,<br><br>Now that we have tied the knot in a small circle, we would like to celebrate our great festival of love with all of you!<br><br>Together with our little daughter, we invite you to dine, dance and share unforgettable moments with us."
+            "celebration.title": "Wedding Party with a Baby Bonus!",
+            "celebration.text": "Ta-da! 🥳<br>We have news! On January 15, 2025, we said \"I do\" in a small circle of family and friends and are now officially the Messmer family. And before you ask: yes, the timing was… um… strategic. Because we are expecting a little miracle – our first child will be born in March!<br>But no wedding without guests! That's why we cordially invite you to our \"Wedding Party with Baby Bonus\" on September 27, 2025. Together with our daughter (who will hopefully be sleeping through the night by then... cough) we would like to celebrate our wedding – with everything that goes with it: delicious food, good music and of course you, our favorite people. We look forward to seeing you!",
+            "details.title": "Celebration Schedule",
+            "details.text": "We look forward to spending an unforgettable day with you!<br><br><b>5:00 PM - Apéro</b><br>Welcome on the roof terrace<br><br><b>7:00 PM - Dinner</b><br>Let us spoil you with our barbecue buffet - there is something for every taste!<br><br><b>10:00 PM - Dance Party</b><br>Music & Dancing until late into the night",
+            "details.disclaimer": "<i>Please note:<br>The exact schedule is not yet final and may change until september.</i>",
+            "location.title": "Arrival",
+            "location.celebrationLocation": "The celebration takes place on the roof terrace \"Zum Wiedehopf\":",
+            "location.byBus": "<b>By Bus</b> (From the \"Haldengut\" bus stop)",
+            "location.byCar": "<b>By Car</b> (From Rychenbergstrasse)",
+            "location.busInstructions1": "Walk uphill towards the roundabout and turn left just before the roundabout.",
+            "location.busInstructions2": "Walk between the parking spaces to the pedestrian crossing in front of the delivery area. There you will see an entrance on the left side of the High Tower, which is marked with our logo.",
+            "location.busInstructions3": "When you go through this entrance, the stairs will take you to the 6th floor. The steep climb is worth it!",
+            "location.busInstructions4": "If you have difficulty climbing stairs, please call us via the intercom in front of the first staircase (on the right wall). We will be happy to pick you up with the staff/goods elevator.",
+            "location.carInstructions1": "At the roundabout, take the 1st exit towards \"Kantonsspital\". After the roundabout, turn right directly and park on the Haldengut grounds. (From 5:00 p.m., all parking spaces of Heineken/Haldengut are free to use)",
+            "location.carInstructions2": "Walk between the parking spaces to the pedestrian crossing in front of the delivery area. There you will see an entrance on the left side of the High Tower, which is marked with our logo.",
+            "location.carInstructions3": "When you go through this entrance, the stairs will take you to the 6th floor. The steep climb is worth it!",
+            "location.carInstructions4": "If you have difficulty climbing stairs, please call us via the intercom in front of the first staircase. We will be happy to pick you up with the staff/goods elevator.",
+            "rsvp.title": "RSVP – Please Respond",
+            "rsvp.text": "We kindly ask for your response by <b>30.04.2025</b> so that we can plan accordingly. Please let us know if you can attend and if you have any special requests or allergies.",
+            "rsvp.germanFormLink": "German RSVP form",
+            "rsvp.name": "Name:",
+            "rsvp.email": "E-mail:",
+            "rsvp.attendance": "Attendance:",
+            "rsvp.yes": "Yes, I'll be there!",
+            "rsvp.no": "Unfortunately no",
+            "rsvp.message": "Message (e.g. allergies, special requests):",
+            "rsvp.submit": "Submit",
+            "registry.title": "Our Wish List",
+            "registry.text": "We are so excited to celebrate our special day with you! Your presence is truly the greatest gift.<br><br>If you'd like to give a gift, we have a few ideas to inspire you. We dream of filling our home with music through a fantastic sound system, creating a plant oasis, and maybe even going on some travel adventures! Contributions towards any of these dreams would be wonderful.<br><br>Of course, your presence is the most important thing to us, and we can't wait to celebrate with you!",
+            "questions.title": "Questions",
+            "questions.text": "<b>Dress code:</b> We would be delighted to see you in summery/autumnal, festive clothing, in which you feel comfortable! For your reference, we will be wearing our wedding outfits.",
+            "questions.disclaimer": "<i>If you have any further questions, please feel free to contact Bettina or Daniel.</i>",
         }
     };
 
@@ -347,12 +587,30 @@
                 element.innerHTML = translations[lang][key];
             }
         });
+        document.documentElement.setAttribute('lang', lang);
+    }
+
+    function switchLanguage(lang) {
+        translatePage(lang);
+        setActiveLanguage(lang);
+    }
+
+    function setActiveLanguage(lang) {
+        const buttons = document.querySelectorAll('.language-switcher button');
+        buttons.forEach(button => {
+            if (button.dataset.lang === lang) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
     }
 
     const userLang = navigator.language || navigator.userLanguage;
-    const lang = userLang.startsWith('de') ? 'de' : 'en'; // Default to English if not German
+    const initialLang = userLang.startsWith('de') ? 'de' : 'en'; // Default to English if not German
 
-    translatePage(lang);
+    translatePage(initialLang);
+    setActiveLanguage(initialLang);
 </script>
 </body>
 </html>
